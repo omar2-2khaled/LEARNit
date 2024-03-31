@@ -51,7 +51,7 @@ const userSchema = new mongoose.Schema({
       ref: 'Course',
     }
   ],
-  wishlist: [
+  bookmarks: [
     {
       type: mongoose.Schema.ObjectId,
       ref: 'Course',

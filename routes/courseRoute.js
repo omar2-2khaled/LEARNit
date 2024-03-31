@@ -12,7 +12,8 @@ router
   .get(courseController.getAllCourses)
   .post(courseController.createCourse);
 
-router.post('/enroll/:id', auth.protect, userController.enroll)
+router.patch('/enroll/:id', auth.protect, userController.enroll)
+router.patch('/bookmarks/:id', userController.addToBookmarks);
 router
   .route('/:id')
   .get(courseController.getCourse)
