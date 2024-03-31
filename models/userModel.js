@@ -51,6 +51,12 @@ const userSchema = new mongoose.Schema({
       ref: 'Course',
     }
   ],
+  wishlist: [
+    {
+      type: mongoose.Schema.ObjectId,
+      ref: 'Course',
+    }
+  ],
   changePasswordAt: Date,
   passwordResetToken: String,
   passwordResetExpires: Date,
