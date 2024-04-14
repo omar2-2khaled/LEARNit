@@ -13,7 +13,7 @@ router
   .post(courseController.createCourse);
 
 router.patch('/enroll/:id', auth.protect, userController.enroll)
-router.patch('/bookmarks/:id', userController.addToBookmarks);
+router.patch('/bookmarks/:id', auth.protect, userController.addToBookmarks);
 router
   .route('/:id')
   .get(courseController.getCourse)
