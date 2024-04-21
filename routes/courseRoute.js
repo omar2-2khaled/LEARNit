@@ -4,15 +4,19 @@ const auth = require('../auth/authController');
 const modulesController = require('../controllers/modulesController');
 const videoController = require('../controllers/videoController');
 const userController = require('../controllers/userController');
+const reviewRoute = require('./reviewRoute');
 const router = express.Router();
 //router.route('/leaderboard').get(courseController.getLeaderboard);
+
+router.use('/:courseId/reviews', reviewRoute);
 
 router
   .route('/')
   .get(courseController.getAllCourses)
   .post(courseController.createCourse);
 
-router.post('/enroll/:id', auth.protect, userController.enroll)
+router.patch('/enroll/:id', auth.protect, userController.enroll)
+router.patch('/bookmarks/:id', auth.protect, userController.addToBookmarks);
 router
   .route('/:id')
   .get(courseController.getCourse)
