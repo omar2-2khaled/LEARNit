@@ -8,6 +8,7 @@ const errorHandler = require('./controllers/errorController');
 const courseRoute = require('./routes/courseRoute');
 const categoryRouter = require('./routes/categoryRoute');
 const userRoute = require('./routes/userRoute');
+const reviewRoute = require('./routes/reviewRoute');
 
 const app = express();
 
@@ -30,7 +31,7 @@ app.use(express.json());
 app.use('/api/v1/user', userRoute);
 app.use('/api/v1/course', courseRoute);
 app.use('/api/v1/categories', categoryRouter);
-
+app.use('/api/v1/reviews', reviewRoute)
 app.all('*', (req, res, next) => {
   const err = new Error(`can't find URL : ${req.originalUrl} on the server.`);
   err.status = 'fail';
