@@ -4,8 +4,11 @@ const auth = require('../auth/authController');
 const modulesController = require('../controllers/modulesController');
 const videoController = require('../controllers/videoController');
 const userController = require('../controllers/userController');
+const reviewRoute = require('./reviewRoute');
 const router = express.Router();
 //router.route('/leaderboard').get(courseController.getLeaderboard);
+
+router.use('/:courseId/reviews', reviewRoute);
 
 router
   .route('/')
