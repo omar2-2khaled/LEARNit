@@ -78,8 +78,13 @@ const courseSchema = new mongoose.Schema({
     type: String,
     trim: true,
     required: [true, 'A Course must have a cover image'],
-  }
-
+  },
+  reviews: [
+    {
+      type: mongoose.Schema.ObjectId,
+      ref: 'Review'
+    }
+  ]
 },
   {
     toJSON: { virtuals: true },
