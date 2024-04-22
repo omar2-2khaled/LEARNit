@@ -8,7 +8,7 @@ router.use(auth.protect);
 
 router.route('/')
     .get(reviewController.getAllReviews)
-    .post(auth.restrictedTo('user'), reviewController.SetReviewToCourseAndUser, reviewController.createReviews)
+    .post(auth.restrictedTo('user', 'admin'), reviewController.SetReviewToCourseAndUser, reviewController.createReviews)
 
 router.route('/:id')
     .get(reviewController.getReview)

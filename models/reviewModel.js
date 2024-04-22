@@ -19,6 +19,6 @@ const reviewSchema = new mongoose.Schema({
     }
 
 });
-
+reviewSchema.index({ user: 1, course: 1 }, { unique: true });
 const Review = mongoose.model('Review', reviewSchema);
 module.exports = Review;
