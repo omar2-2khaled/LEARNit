@@ -1,4 +1,6 @@
+
 const express = require('express');
+const cors = require('cors');
 const morgan = require('morgan');
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
@@ -11,7 +13,7 @@ const userRoute = require('./routes/userRoute');
 const reviewRoute = require('./routes/reviewRoute');
 
 const app = express();
-
+app.use(cors({ optionsSuccessStatus: 200 }));
 app.use(helmet());
 app.use(mongoSanitize());
 app.use(xss());
