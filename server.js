@@ -9,9 +9,9 @@ const port = process.env.PORT;
 const options = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  ssl: true,
-  sslValidate: true,
-  sslCA: [fs.readFileSync(path.resolve(__dirname, './certs/ca-certificate.crt'))]
+  tls: true,
+  tlsInsecure: false,
+  // tlsCAFile: fs.readFileSync(path.resolve(__dirname, './certs/ca-certificate.crt'))
 };
 mongoose
   .connect(process.env.DB, options)
