@@ -29,7 +29,9 @@ app.use(morgan('dev'));
 app.use(express.static(`${__dirname}/public`));
 
 app.use(express.json());
-
+app.get('/api/welcome', (req, res) => {
+  res.status(200).send({ message: 'welcome to learnIT' });
+})
 app.use('/api/v1/user', userRoute);
 app.use('/api/v1/course', courseRoute);
 app.use('/api/v1/categories', categoryRouter);
