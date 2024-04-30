@@ -29,6 +29,9 @@ app.use(morgan('dev'));
 app.use(express.static(`${__dirname}/public`));
 
 app.use(express.json());
+app.get('/', (req, res) => {
+  res.status(200).send({ message: 'Welcome to the server!' });
+});
 app.get('/api/welcome', (req, res) => {
   res.status(200).send({ message: 'welcome to learnIT' });
 })
