@@ -7,7 +7,7 @@ const app = require('./app');
 
 const port = process.env.PORT;
 const options = {
-  useNewUrlParser: true,
+  useUnifiedTopology: true,
   tls: true,
   tlsInsecure: false,
   // tlsCAFile: fs.readFileSync(path.resolve(__dirname, './certs/ca-certificate.crt'))
